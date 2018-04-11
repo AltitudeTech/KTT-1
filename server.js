@@ -1,6 +1,7 @@
 const express = require('express')
 const next = require('next')
 const app = next({dev: process.env.NODE_ENV !== 'production'})
+// const app = next({dev: false})
 const handle = app.getRequestHandler()
 const port = process.env.PORT || 3000
 const verifyPhone = require('./lib/twilio/VerifyPhone')
@@ -35,23 +36,23 @@ app.prepare().then(() => {
     //console.log(phone);
     try {
       const response = await verifyPhone.sendCode(phone);
-      console.log(response);
+      // console.log(response);
       res.json(response);
     } catch (e) {
-      res.json(response);
+      res.json(e);
     }
   })
 
   server.get('/poll-verification/verify', async (req, res) => {
     let phone = req.query.phone,
         code = req.query.code;
-    console.log(code);
+    // console.log(code);
     try {
       const response = await verifyPhone.verifyCode (phone, code);
-      console.log(response);
-      res.json(response);
+      // console.log(response);
+      // res.json(response);
     } catch (e) {
-      res.json(response);
+      res.json(e);
     }
   })
 
@@ -65,7 +66,7 @@ app.prepare().then(() => {
     }
   })
 
-  server.get('/fetch-articles', async (req, res) => {
+  /*server.get('/fetch-articles', async (req, res) => {
     console.log('fetching articles list');
     try {
       const articles = await the411.getArticles();
@@ -73,7 +74,7 @@ app.prepare().then(() => {
     } catch (e) {
       res.json(e);
     }
-  })
+  })*/
 
   server.get('*', (req, res) => {
     return handle(req, res)
