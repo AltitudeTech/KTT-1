@@ -183,7 +183,6 @@ query LastPolls{
   lastPolls {
     _id
     title
-    tagLine
     totalVotes
     aVotes
     bVotes
