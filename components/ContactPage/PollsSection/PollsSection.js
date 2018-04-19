@@ -3,7 +3,7 @@ import Head from 'next/head'
 import {graphql} from 'react-apollo'
 import gql from 'graphql-tag'
 
-import { Row, Col} from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 import Toggle from 'material-ui/Toggle';
 import {deepOrange500} from 'material-ui/styles/colors'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
@@ -123,7 +123,7 @@ class PollsSection extends Component{
         </Row>
         <Row style={{/*backgroundColor: '#F6F8FA',*/ color: 'black', paddingBottom: '15px'}}>
           {(lastPolls[0])&&(
-            <Col md={6} style={{paddingTop: '10%'}}>
+            <Col md={6} style={{paddingTop: '7%'}}>
               {/* Poll */}
               <div style={{textAlign: 'left',
                 height: '70%',
@@ -144,9 +144,9 @@ class PollsSection extends Component{
           </Col>
           )}
           {(lastPolls[1])&&(
-            <Col md={6}style={{paddingTop: '5%'}}>
+            <Col md={6}style={{paddingTop: '2%'}}>
               <Row>
-                <Col md={7} xs={12}> <h4>Last weeks results</h4></Col>
+                <Col md={12} xs={12}> <h4>Last weeks results</h4></Col>
                 <Col md={3} xs={4} xsOffset={8}>
                   <MuiThemeProvider muiTheme={getMuiTheme({userAgent, ...muiTheme})}>
                     <Toggle
@@ -161,7 +161,7 @@ class PollsSection extends Component{
               </Row>
               <div style={{textAlign: 'left', padding: '30px'}}>
                 {this.state.showCharts ?
-                  (<div>
+                  (<div style={{width: '100%', height: '230px'}}>
                     <h3 style={{color: 'black', textAlign: 'center', paddingBottom: '10px'}}>{lastPolls[1].title}</h3>
                     <ResultChart poll={lastPolls[1]}/>
                   </div>) : (<div style={{marginBottom : '40px'}} id="tagline">

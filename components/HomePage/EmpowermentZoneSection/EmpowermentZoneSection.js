@@ -26,11 +26,11 @@ const EmpowermentZoneSection = (props) => {
               </div>
             </Col>
             {/*<Col md={6} className="cell-xs-10 cell-md-8 cell-lg-3 section-60 section-lg-120">*/}
-            <Col md={6} style={{paddingTop: "50px", marginLeft: '-25px'}}>
+            <Col md={6} style={{padding: "50px", /*marginLeft: '-25px'*/}}>
               {/*<h2 className="text-bold" style={{fontSize: '50px', color: 'white'}}>TURAKI EMPOWERMENT ZONE</h2>*/}
               <div>
                   <span style={{
-                    fontSize: '90px',
+                    fontSize: '70px',
                     fontWeight: '500',
                     lineHeight: '1.2',
                     textAlign: 'center',
@@ -38,7 +38,7 @@ const EmpowermentZoneSection = (props) => {
                     fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
                     color: '#dc3545',
                     textShadow:'-1px -1px 0 #dc3545, 1px -1px 0 #dc3545,-1px 1px 0 #dc3545,1px 1px 0 #dc3545'
-                  }}>KTT.YEZ</span>
+                  }}>KTT. YEZ</span>
               </div>
               {/* <div>
                   <span style={{
